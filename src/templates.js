@@ -1,29 +1,22 @@
+import { row, col } from './utils';
+
 function title(block) {
-  let html = '';
-  return (html = `<div class="row">
-      <div class="col-sm">
-        <h1>${block.value}</h1>
-      </div>
-    </div>`);
+  const tag = block.options.tag ?? 'h1';
+  return row(col(`<${tag}}>${block.value}</${tag}>`));
 }
 
 function text(block) {
-  let html = '';
-  return (html = `<div class="row">
-      <div class="col-sm">
-        <p>${block.value}</p>
-      </div>
-    </div>`);
+  return row(col(`<p>${block.value}</p>`));
 }
 
 function colums(block) {
-  let html = block.value.map((value) => `<div class="col-sm"><p>${value}</p></div>`);
-  return html.join('');
+  let html = block.value.map(col).join('');
+  return row(html);
 }
 
 function image(block) {
-  let html = '';
-  return html = `<img src="${block.value}" alt="#">`;
+  // return row(`<img src="${block.value}" alt="#">`);
+  return `${block.value}`;
 }
 
-export { title, text, colums, image };
+export const templates = { title, text, colums, image };
