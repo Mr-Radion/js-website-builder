@@ -2,7 +2,7 @@
   "name": "website-js",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/Mr-Radion/WebsiteBuilderJS.git",
+  "repository": "https://github.com/Mr-Radion/js-website-builder.git",
   "author": "Mr.Radion <mr.rodion_oa@mail.ru>",
   "license": "MIT",
   "scripts": {

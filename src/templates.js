@@ -16,21 +16,14 @@ function text(block) {
     </div>`);
 }
 
-// function colums(block) {
-//   let html = '';
-//   return (html = `
-//       <div class="row">
-//       <div class="col-sm">
-//         <p>Magna incididunt mollit voluptate sunt culpa.</p>
-//       </div>
-//       <div class="col-sm">
-//         <p>Magna incididunt mollit voluptate sunt culpa.</p>
-//       </div>
-//       <div class="col-sm">
-//         <p>Magna incididunt mollit voluptate sunt culpa.</p>
-//       </div>
-//     </div>
-//   `);
-// }
+function colums(block) {
+  let html = block.value.map((value) => `<div class="col-sm"><p>${value}</p></div>`);
+  return html.join('');
+}
 
-export { title, text };
+function image(block) {
+  let html = '';
+  return html = `<img src="${block.value}" alt="#">`;
+}
+
+export { title, text, colums, image };
