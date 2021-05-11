@@ -1,8 +1,8 @@
-import { row, col } from './utils';
+import { row, col, css } from './utils';
 
 function title(block) {
-  const tag = block.options.tag ?? 'h1';
-  return row(col(`<${tag}}>${block.value}</${tag}>`));
+  const { tag = 'h1', styles } = block.options;
+  return row(col(`<${tag}>${block.value}</${tag}>`), css(styles));
 }
 
 function text(block) {
@@ -10,13 +10,13 @@ function text(block) {
 }
 
 function colums(block) {
+  // .map(col) - идентично .map(item => col(item))
   let html = block.value.map(col).join('');
   return row(html);
 }
 
 function image(block) {
-  // return row(`<img src="${block.value}" alt="#">`);
-  return `${block.value}`;
+  return row(`<img src="${block.value}" />`);
 }
 
 export const templates = { title, text, colums, image };

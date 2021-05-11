@@ -1,4 +1,4 @@
-import './classes/main.css';
+import './styles/main.css';
 import { model } from './model';
 import { templates } from './templates';
 
